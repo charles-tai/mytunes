@@ -29,7 +29,7 @@ PlayerView - the player that the user sees
 - renders current song playing
 
 
-AppView renders the AppModel, and instantiates the LibraryView and PlayerView
+AppView renders the AppModel, and instantiates and renders the LibraryView and PlayerView
 
 data.js stores the song objects
 
