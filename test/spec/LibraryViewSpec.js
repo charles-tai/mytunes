@@ -1,4 +1,4 @@
-describe("LibraryView", function() {
+xdescribe("LibraryView", function() {
   var view, fakeSongs, fakeSongData, fakeSubview;
 
   beforeEach(function() {
