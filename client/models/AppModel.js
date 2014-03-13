@@ -14,31 +14,38 @@ var AppModel = Backbone.Model.extend({
     end up refering to the window. That's just what happens with all JS events. The handlers end up
     getting called from the window (unless we override it, as we do here). */
 
+    // library play event handler not needed by songQueue handles play functionality
     // params.library.on('play', function(song){
     //   this.set('currentSong', song);
     // }, this);
 
+    //library event handlers
     // context not needed because songQueue defined as variable
-    params.library.on('enqueue', function (song) {
+    params.library.on('enqueue', function(song) {
       songQueue.add(song);
     });
+
+    //songQueue event handlers
     songQueue.on('play', function(song){
       console.log('play' + songQueue.length);
       this.set('currentSong', song);
     },this);
-    this.get('currentSong').on('ended', function (song) {
-      song.dequeue();
-    });
-    songQueue.on('ended', function (song) {
-      console.log('songQueue ended');
-      song.dequeue();
-    });
-    songQueue.on('dequeue', function () {
-      console.log('songDequeue activated');
-      songQueue.shift();
-      console.log('ended ' +songQueue.length);
-    });
 
+    // this.get('currentSong').on('ended', function(song) {
+    //   song.dequeue();
+    // });
+
+    // songQueue.on('ended', function() {
+    //   console.log('songQueue ended');
+    //   songQueue.at(0).dequeue();
+    // });
+
+    // songQueue.on('dequeue', function() {
+    //   console.log('songDequeue activated');
+    //   songQueue.shift();
+    //   songQueue.playFirst();
+    //   console.log('ended ' + songQueue.length);
+    // });
   }
 
 });

@@ -33,13 +33,27 @@ var SongQueue = Songs.extend({
       console.log('add');
       console.log(this.length);
       if (this.length === 1) {
-        this.playFirst(song);
+        this.playFirst();
       }
+    });
+
+    this.on('ended', function(song){
+      console.log('SongQueue ended listener ' + song);
+      this.at(0).dequeue();
+    });
+
+    this.on('dequeue', function() {
+      console.log('songDequeue activated');
+      this.shift();
+      this.playFirst();
+      console.log('ended ' + this.length);
     });
   },
 
-  playFirst: function (song) {
-    song.play();
+  playFirst: function () {
+    if (this.length >= 1) {
+      this.at(0).play();
+    }
   }
 
 
