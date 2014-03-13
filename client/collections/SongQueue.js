@@ -30,8 +30,8 @@ var SongQueue = Songs.extend({
 
   initialize: function(){
     this.on('add', function (song) {
-      // console.log('add');
-      // console.log(song);
+      console.log('add');
+      console.log(this.length);
       if (this.length === 1) {
         this.playFirst(song);
       }
@@ -40,7 +40,7 @@ var SongQueue = Songs.extend({
 
   playFirst: function (song) {
     song.play();
-  },
+  }
 
 
 });
