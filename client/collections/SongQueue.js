@@ -38,13 +38,12 @@ var SongQueue = Songs.extend({
     });
 
     this.on('ended', function(song){
-      console.log('SongQueue ended listener ');
-      console.log(song);
+      console.log('SongQueue "ended" listener');
       this.at(0).dequeue();
     });
 
     this.on('dequeue', function() {
-      console.log('songDequeue activated');
+      console.log('SongQueue "dequeue" listener');
       this.shift();
 
       if(this.length >= 1){

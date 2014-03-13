@@ -16,7 +16,6 @@ var PlayerView = Backbone.View.extend({
 
   endSong: function() {
     this.model.ended();
-    console.log('PlayerView endSong triggered ' + this.model);
   },
 
   setSong: function(song){
