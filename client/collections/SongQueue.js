@@ -38,23 +38,23 @@ var SongQueue = Songs.extend({
     });
 
     this.on('ended', function(song){
-      console.log('SongQueue ended listener ' + song);
+      console.log('SongQueue ended listener ');
+      console.log(song);
       this.at(0).dequeue();
     });
 
     this.on('dequeue', function() {
       console.log('songDequeue activated');
       this.shift();
-      this.playFirst();
+
+      if(this.length >= 1){
+        this.playFirst();
+      }
       console.log('ended ' + this.length);
     });
   },
 
   playFirst: function () {
-    if (this.length >= 1) {
-      this.at(0).play();
-    }
+    this.at(0).play();
   }
-
-
 });
