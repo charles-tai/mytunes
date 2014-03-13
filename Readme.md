@@ -33,4 +33,15 @@ AppView renders the AppModel, and instantiates and renders the LibraryView and P
 
 data.js stores the song objects
 
+Next steps-------------------------
+
+Specs aren't working, but we have the functionality those specs test for. Phillip suggested to add our own trigger events as in the specs, but in our code, and see if our app still functions.
+- remove?
+
+When you add a song to the queue, if you try and play from the library, the library song starts playing right away. But if the library song is the same song as the song playing from the queue, the library song doesn't play. The reverse is true. Where is the logic that causes this behavior?
+
+Allow users to remove songs from songqueue.
+
+Extra credit?
+
 

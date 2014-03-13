@@ -8,8 +8,12 @@ var PlayerView = Backbone.View.extend({
   initialize: function() {
     var playerView = this;
     this.el.addEventListener('ended', function() {
+      //unflag variable
       playerView.model.ended();
     },this);
+
+    //while playing, flag a variable
+    //
   },
 
   setSong: function(song){
