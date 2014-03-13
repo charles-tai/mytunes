@@ -29,6 +29,18 @@ when song.ended
 var SongQueue = Songs.extend({
 
   initialize: function(){
-  }
+    this.on('add', function (song) {
+      // console.log('add');
+      // console.log(song);
+      if (this.length === 1) {
+        this.playFirst(song);
+      }
+    });
+  },
+
+  playFirst: function (song) {
+    song.play();
+  },
+
 
 });
