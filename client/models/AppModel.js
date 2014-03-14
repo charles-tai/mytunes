@@ -23,11 +23,12 @@ var AppModel = Backbone.Model.extend({
     // context not needed because songQueue defined as variable
     params.library.on('enqueue', function(song) {
       songQueue.add(song);
+      console.log('library enqueue, model"s collection');
+      console.log(songQueue);
     });
 
     //songQueue event handlers
     songQueue.on('play', function(song){
-      console.log('play' + songQueue.length);
       this.set('currentSong', song);
     },this);
   }
