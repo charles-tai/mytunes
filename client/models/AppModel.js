@@ -31,6 +31,11 @@ var AppModel = Backbone.Model.extend({
     songQueue.on('play', function(song){
       this.set('currentSong', song);
     },this);
+
+    songQueue.on('stop', function(){
+      this.set('currentSong', null);
+      this.trigger('change:currentSong');
+    }, this);
   }
 
 });

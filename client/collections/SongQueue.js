@@ -57,7 +57,6 @@ var SongQueue = Songs.extend({
       console.log('SongQueue Song Remove', song);
       this.remove(song);
       console.log('SongLength',this.length);
-      console.log('song queue removed');
     });
   },
 
