@@ -9,8 +9,6 @@ var AppModel = Backbone.Model.extend({
     // library event handlers
     params.library.on('enqueue', function(song) {
       songQueue.add(song);
-      console.log('library enqueue, model"s collection');
-      console.log(songQueue);
     });
 
     // songQueue event handlers

@@ -10,14 +10,11 @@ var SongQueueEntryView = Backbone.View.extend({
 
   events: {
     'click td': function() {
-      console.log('SongQueueEntry View:');
-      console.log(this);
       this.model.removeSong();
     }
   },
 
   render: function() {
-    console.log('SongQueueEntryView render:');
     return this.$el.html(this.template(this.model.attributes));
   }
 
